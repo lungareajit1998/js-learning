@@ -7,11 +7,19 @@ function stringBasics() {
 }
 stringBasics()
 
+
+
 console.log("========== Step 2 ==========");
-function myhobbies(yourhobby1 , yourhobby2, yourhobby3){
-    console.log("My Hobbies: ", yourhobby1, yourhobby2, yourhobby3);
-    var result = yourhobby1+yourhobby2+yourhobby3;
+function myhobbies(){
+    var hobby1 = ("Writing");
+    var hobby2 = ("Reading");
+    var hobby3 = ("Playing")
+    console.log("My Hobbies:",hobby1,hobby2,hobby3);
+    var result = hobby1+hobby2+hobby3;
     var sum = result.length;
-    console.log("The Length is:",sum);  
+    console.log("The sum of the chars:",sum);
 }
-myhobbies("Writing"," Reading"," Playing")
+myhobbies()
+
+
+
