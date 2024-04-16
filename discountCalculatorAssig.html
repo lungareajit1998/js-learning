@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount calculator</title>
+    <style>
+        body{
+            background-color:white;
+        }
+        .card{
+            box-sizing: border-box;
+            width: 500px;
+            height: 400px;
+            border: 1px solid black;
+            padding: 10px;
+            margin: 20px auto;
+            text-align: center;
+            background-color: blanchedalmond;
+        }
+        h1{
+            color: darkcyan;
+            padding-bottom: 10px;
+        }
+        .input-item{
+            color: rgb(108, 213, 248);
+            font-size: x-large;
+        }
+        .item{
+            margin-right: 210px;
+            color: darkslategrey;
+        }
+        #amount{
+            width: 80%;
+            height: 23px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+
+        }
+        #discount-percentage{
+            width: 80%;
+            height: 23px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        #discount-amount{
+            width: 80%;
+            height: 23px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            background-color: white;
+        }
+        .calculate{
+            width: 30%;
+            height: 30px;
+            background-color: green;
+            color:white;
+            margin-right: 15px;
+        }
+        #reset{
+            width: 30%;
+            height: 30px;
+            background-color: red;
+            color: white;
+            margin-left: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Discount Calculator</h1>
+        <form action="#">
+            
+            <div class="input-item">
+                <label class="item" for="amount">Enter bill amount:</label> <br>
+                <input type="text" id="amount">
+            </div>
+
+            <div class="input-item">
+                <label class="item" for="discount-percentage">Select discount: %</label> <br>
+                <input id="discount-percentage" type="number" min="0" max="100">
+            </div>
+            
+            <div class="input-item">
+                <label class="item" for="discount-amount">Discount amount: </label> <br>
+                <input type="text" id="discount-amount" disabled>
+            </div>
+            <button type="submit" class="calculate">Calculate</button>
+            <input type="reset" id="reset" class="reset">
+        </form>
+    </div>
+    <script>
+        const calculate = document.querySelector('.calculate');
+        const resetBtn = document.querySelector('.reset');
+
+        calculate.addEventListener('click',(e) => {
+            e.preventDefault();
+
+            let billAmt = document.getElementById('amount').value;
+            let percentage = document.getElementById('discount-percentage').value;
+            let discount = document.getElementById('discount-amount');
+
+            discount.value = (billAmt * percentage) / 100;
+        });
+
+        resetBtn.addEventListener('click', () => {
+            window.location.reload();
+        });
+    </script>
+</body>
+</html>
